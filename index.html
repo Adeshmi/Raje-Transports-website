@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Cab & Bus Service in Virar West & Mumbai | Raje Transports</title>
+    <meta name="description" content="Raje Transports provides reliable corporate shuttle services, airport transfers, and outstation car rentals in Virar, Mumbai, and Palghar. Book safe, GPS-tracked vehicles today.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES (Easy to change colors) --- */
+        :root {
+            --primary-color: #0c2461; /* Deep Navy Blue (Trust) */
+            --accent-color: #f6b93b;  /* Golden Yellow (Action/Taxi) */
+            --text-dark: #1e272e;
+            --text-light: #f5f6fa;
+            --white: #ffffff;
+            --gray-light: #f1f2f6;
+            --transition: all 0.3s ease;
+        }
+
+        /* --- GLOBAL RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        
+        /* --- UTILITY CLASSES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #e58e26;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo span { color: var(--accent-color); }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover { color: var(--accent-color); }
+
+        .cta-phone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(12, 36, 97, 0.8), rgba(12, 36, 97, 0.8)), 
+                        url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* --- FEATURES SECTION --- */
+        .features {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services {
+            padding: 80px 0;
+            background-color: var(--gray-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-img {
+            height: 200px;
+            background-color: #ddd; /* Placeholder color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+        
+        /* Using background images for demo purposes */
+        .s-corp { background: url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80') center/cover; }
+        .s-air { background: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=600&q=80') center/cover; }
+        .s-rent { background: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=600&q=80') center/cover; }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* --- CALL TO ACTION BAR --- */
+        .cta-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer ul li { margin-bottom: 10px; }
+        .footer a:hover { color: var(--accent-color); }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        /* --- FLOATING WHATSAPP BUTTON --- */
+        .float-wa {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .float-wa:hover {
+            background-color: #1da851;
+            transform: scale(1.1);
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Ideally add a hamburger menu here */
+            .cta-phone span { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">Raje<span>Transports</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cta-phone">
+                <i class="fas fa-phone-alt"></i>
+                <a href="tel:+919699994560">+91 9699994560</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Reliable Corporate & Airport<br>Transport in Mumbai</h1>
+            <p>Professional Cab Services for MNC Employees, Airport Transfers, and Outstation Trips.</p>
+            <a href="tel:+919699994560" class="btn btn-primary">Book a Ride Now</a>
+        </div>
+    </section>
+
+    <section class="features" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Raje Transports?</h2>
+                <p>We are dedicated to punctuality, safety, and comfort for every mile of your journey.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-clock feature-icon"></i>
+                    <h3>Always On Time</h3>
+                    <p>We value your time. Our track record for punctuality is unmatched in Virar & Mumbai.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Safe & Secure</h3>
+                    <p>GPS-enabled vehicles and background-verified drivers ensure total peace of mind.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-wallet feature-icon"></i>
+                    <h3>Transparent Pricing</h3>
+                    <p>No hidden charges. Competitive rates for daily commutes and outstation rentals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Tailored transportation solutions for individuals and businesses.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img s-corp"></div>
+                    <div class="service-content">
+                        <h3>Corporate Employee Shuttle</h3>
+                        <p>Daily pick-up and drop-off services for MNCs. Reliable, monthly contract-based transport.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img s-air"></div>
+                    <div class="service-content">
+                        <h3>Airport Transfers</h3>
+                        <p>Stress-free drops and pickups to Mumbai International Airport. Never miss a flight.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img s-rent"></div>
+                    <div class="service-content">
+                        <h3>InterCity Car Rentals</h3>
+                        <p>Premium cars for business trips or family vacations. Flexible hourly and daily packages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to book your ride?</h2>
+            <p style="margin: 20px 0; color: #ddd;">Call us today for a custom quote or immediate booking.</p>
+            <a href="tel:+919699994560" class="btn btn-primary" style="background: white; color: var(--primary-color);">Call +91 9699994560</a>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Raje Transports</h4>
+                    <p>Your trusted travel partner in Virar West and Mumbai.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Shop no 9 - Agarwal Paradise, Y K Nagar, Virar West, 401303</li>
+                        <li><i class="fas fa-phone"></i> +91 9699994560</li>
+                        <li><i class="fas fa-envelope"></i> info@rajetransports.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Raje Transports. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919699994560" class="float-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
